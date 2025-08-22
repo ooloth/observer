@@ -1,0 +1,12 @@
+# See: https://github.com/compose-spec/compose-spec/blob/main/spec.md
+
+services:
+  # See: https://github.com/louislam/uptime-kuma/blob/1.23.X/docker/docker-compose.yml
+  uptime-kuma:
+    image: louislam/uptime-kuma:1
+    container_name: uptime-kuma
+    volumes:
+      - ./uptime-kuma:/app/data
+    ports:
+      - 6789:6789 # <Host Port>:<Container Port>
+    restart: always
